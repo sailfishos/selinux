@@ -108,7 +108,7 @@ needed for developing SELinux applications.
 %patch1
 
 %build
-# only build libsepol
+# only build libselinux
 cd %{name}
 export LDFLAGS="%{?__global_ldflags}"
 export DISABLE_RPM="y"
