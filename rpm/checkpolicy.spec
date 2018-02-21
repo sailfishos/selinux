@@ -51,7 +51,7 @@ Only required for building policies.
 %setup -q -n %{name}-%{version}/upstream
 
 %build
-make clean
+#make clean
 # only build checkpolicy
 cd %{name}
 make LIBDIR="%{_libdir}" CFLAGS="%{optflags}" 
