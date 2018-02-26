@@ -46,6 +46,7 @@ BuildRequires: systemd
 BuildRequires: python python-devel
 Requires: libsepol%{?_isa} >= %{libsepolver}
 #Conflicts: filesystem < 3, selinux-policy-base < 3.13.1-138
+Obsoletes: libselinux1
 
 %description
 Security-enhanced Linux is a feature of the Linux® kernel and a number

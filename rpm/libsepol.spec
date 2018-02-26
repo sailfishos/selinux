@@ -27,13 +27,9 @@ Release: 1%{?dist}
 License: LGPLv2+
 Group: System Environment/Libraries
 Source: %{name}-%{version}.tar.bz2
-
-# download https://raw.githubusercontent.com/fedora-selinux/scripts/master/selinux/make-fedora-selinux-patch.sh
-# run:
-# $ VERSION=2.7 ./make-fedora-selinux-patch.sh libsepol
-# HEAD https://github.com/fedora-selinux/selinux/commit/2d0b90c1d95ec908f94c06337ec07a96b7d1205e
 Patch1: ln_old_coreutils.patch
 URL: https://github.com/SELinuxProject/selinux/wiki
+Obsoletes: libsepol1
 BuildRequires: flex
 # we don't build python2 modules, but make clean expects python2 (could be patched out though)
 BuildRequires: python
