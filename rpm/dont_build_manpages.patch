@@ -1,0 +1,30 @@
+to avoid using `xmlto` don't build any manpages
+
+diff --git a/secilc/Makefile b/secilc/Makefile
+index 1cac53e..95f0a8e 100644
+--- a/secilc/Makefile
++++ b/secilc/Makefile
+@@ -21,7 +21,7 @@ CFLAGS ?= -Wall -Wshadow -Wextra -Wundef -Wmissing-format-attribute -Wcast-align
+ override CFLAGS += -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64
+ override LDLIBS += -lsepol
+ 
+-all: $(SECILC) $(SECIL2CONF) man
++all: $(SECILC) $(SECIL2CONF)
+ 
+ $(SECILC): $(SECILC_OBJS)
+ 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^ $(LDLIBS)
+@@ -40,13 +40,11 @@ $(SECILC_MANPAGE): $(SECILC_MANPAGE).xml
+ $(SECIL2CONF_MANPAGE): $(SECIL2CONF_MANPAGE).xml
+ 	$(XMLTO) man $(SECIL2CONF_MANPAGE).xml
+ 
+-install: all man
++install: all
+ 	-mkdir -p $(BINDIR)
+ 	-mkdir -p $(MANDIR)/man8
+ 	install -m 755 $(SECILC) $(BINDIR)
+ 	install -m 755 $(SECIL2CONF) $(BINDIR)
+-	install -m 644 $(SECILC_MANPAGE) $(MANDIR)/man8
+-	install -m 644 $(SECIL2CONF_MANPAGE) $(MANDIR)/man8
+ 
+ doc:
+ 	$(MAKE) -C docs
