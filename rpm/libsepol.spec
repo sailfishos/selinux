@@ -27,7 +27,7 @@ Release: 1%{?dist}
 License: LGPLv2+
 Group: System Environment/Libraries
 Source: %{name}-%{version}.tar.bz2
-Patch1: ln_old_coreutils.patch
+Patch1: ln_old_coreutils_libsepol.patch
 URL: https://github.com/SELinuxProject/selinux/wiki
 Obsoletes: libsepol1
 BuildRequires: flex
@@ -70,7 +70,7 @@ needed for developing applications that manipulate binary policies.
 
 %prep
 %setup -q -n %{name}-%{version}/upstream
-%patch1
+%patch1 -p1
 
 # sparc64 is an -fPIC arch, so we need to fix it here
 %ifarch sparc64
@@ -93,7 +93,7 @@ mkdir -p ${RPM_BUILD_ROOT}%{_mandir}/man3
 mkdir -p ${RPM_BUILD_ROOT}%{_mandir}/man8
 # only install libsepol files
 cd %{name}
-make DESTDIR="${RPM_BUILD_ROOT}" LIBDIR="${RPM_BUILD_ROOT}%{_libdir}" SHLIBDIR="${RPM_BUILD_ROOT}/%{_libdir}" install
+make DESTDIR="${RPM_BUILD_ROOT}" LIBDIR="%{_libdir}" SHLIBDIR="%{_libdir}" install
 rm -f ${RPM_BUILD_ROOT}%{_bindir}/genpolbools
 rm -f ${RPM_BUILD_ROOT}%{_bindir}/genpolusers
 rm -f ${RPM_BUILD_ROOT}%{_bindir}/chkcon
