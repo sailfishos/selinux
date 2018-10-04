@@ -20,11 +20,11 @@
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-%global libsepolver 2.7-1
+%global libsepolver 2.8-1
 
 Name:           secilc
-Version:        2.7
-Release:        4%{?dist}
+Version:        2.8
+Release:        1%{?dist}
 Summary:        The SELinux CIL Compiler
 
 License:        BSD

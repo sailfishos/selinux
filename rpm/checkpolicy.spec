@@ -20,13 +20,13 @@
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-%define libselinuxver 2.7-1
-%define libsepolver 2.7-1
+%define libselinuxver 2.8-1
+%define libsepolver 2.8-1
 
 Summary: SELinux policy compiler
 Name: checkpolicy
-Version: 2.7
-Release: 4%{?dist}
+Version: 2.8
+Release: 1%{?dist}
 License: GPLv2
 Source: %{name}-%{version}.tar.bz2
 #Conflicts: selinux-policy-base < 3.13.1-138
