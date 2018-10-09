@@ -20,8 +20,8 @@
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-%define libselinuxver 2.8-1
-%define libsepolver 2.8-1
+%define libselinuxver 2.8
+%define libsepolver 2.8
 
 Summary: SELinux policy compiler
 Name: checkpolicy
